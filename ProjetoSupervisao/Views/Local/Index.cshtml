@@ -1,0 +1,55 @@
+﻿@model List<LocalViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    ViewData["Title"] = "Listagem de Locais";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a href="/local/create" class="btn btn-primary mb-3">Novo Registro</a>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Ações</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var local in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/local/edit?id=@local.Id" class="btn btn-sm btn-info">Editar</a>
+
+                    <a href="javascript:confirmarExclusao(@local.Id)" class="btn btn-sm btn-danger">Apagar</a>
+                </td>
+                <td>@local.Id</td>
+                <td>@local.Nome</td>
+                <td>@local.Descricao</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    function confirmarExclusao(id) {
+        Swal.fire({
+            title: 'Tem certeza?',
+            text: "Essa ação não poderá ser desfeita!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Sim, apagar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/local/delete?id=' + id;
+            }
+        });
+    }
+</script>

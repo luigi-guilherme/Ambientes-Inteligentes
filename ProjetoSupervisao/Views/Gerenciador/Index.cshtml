@@ -1,0 +1,299 @@
+﻿@{
+    ViewData["Title"] = "Gerenciador de Dispositivos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>@ViewData["Title"]</h2>
+    <div id="status-led" class="rounded-circle" style="width: 30px; height: 30px; background-color: #ccc; border: 1px solid #666;" title="Status do Alerta"></div>
+</div>
+<p>Monitoramento em tempo real dos sensores e acionamento de alertas.</p>
+
+<fieldset class="form-group border p-3 mb-3">
+    <legend class="w-auto px-2">Configurações</legend>
+    <div class="row">
+        <div class="col-md-4">
+            <label>Dispositivo</label>
+            <select id="dispositivo" class="form-control" asp-items="ViewBag.Dispositivos"></select>
+        </div>
+        <div class="col-md-2">
+            <label>&nbsp;</label>
+            <button id="btnMonitorar" class="btn btn-success w-100">Iniciar</button>
+        </div>
+        <div class="col-md-6">
+            <label>Status</label>
+            <input type="text" id="status-texto" class="form-control" value="Aguardando início..." readonly />
+        </div>
+    </div>
+</fieldset>
+
+<fieldset class="form-group border p-3 mb-3">
+    <legend class="w-auto px-2">Limites de Alerta (Triggers)</legend>
+    <div class="row">
+        <div class="col-md-4">
+            <label>Temp. (Min/Max)</label>
+            <div class="input-group">
+                <input type="number" id="tempMin" class="form-control" value="15">
+                <input type="number" id="tempMax" class="form-control" value="25">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>Umidade (Min/Max)</label>
+            <div class="input-group">
+                <input type="number" id="umidMin" class="form-control" value="30">
+                <input type="number" id="umidMax" class="form-control" value="50">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>Luz (Min/Max)</label>
+            <div class="input-group">
+                <input type="number" id="lumMin" class="form-control" value="0">
+                <input type="number" id="lumMax" class="form-control" value="30">
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <h4>Histórico Recente (Tempo Real)</h4>
+        <div class="chart-container" style="position: relative; height:40vh; width: 100%">
+            <canvas id="chartLine"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-4 text-center">
+        <h4 class="mb-2">Temperatura</h4>
+        <div class="mx-auto" style="height:160px; width:160px;">
+            <canvas id="chartTempGauge"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+        <h4 class="mb-2">Umidade</h4>
+        <div class="mx-auto" style="height:160px; width:160px;">
+            <canvas id="chartUmidGauge"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+        <h4 class="mb-2">Luminosidade</h4>
+        <div class="mx-auto" style="height:160px; width:160px;">
+            <canvas id="chartLumGauge"></canvas>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var timerId = null;
+        var chartLine, chartTemp, chartUmid, chartLum;
+        var ultimoStatus = "";
+
+        $("#btnMonitorar").click(function() {
+            if (timerId) {
+                // Para o monitoramento
+                clearInterval(timerId);
+                timerId = null;
+                $(this).removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                $("#status-texto").val("Monitoramento parado.");
+            } else {
+                // Inicia o monitoramento
+                var deviceId = $("#dispositivo").val();
+                if (deviceId == "0") {
+                    alert("Selecione um dispositivo.");
+                    return;
+                }
+                $(this).removeClass("btn-success").addClass("btn-danger").text("Parar");
+
+                inicializarGraficos();
+                buscarDados();
+
+                timerId = setInterval(buscarDados, 5000);
+            }
+        });
+
+        // 1. AJAX: Busca os dados na API
+        function buscarDados() {
+            var deviceId = $("#dispositivo").val();
+
+            $.ajax({
+                url: "/gerenciador/obterdadosatuais",
+                type: "GET",
+                dataType: "json", // Garante que o jQuery vai parsear a resposta
+                data: { deviceId: deviceId },
+                success: function (dados) {
+                    $("#status-texto").val("Dados recebidos em: " + new Date().toLocaleTimeString());
+                    atualizarGraficos(dados);
+                    verificarLimites(dados);
+                },
+                error: function (xhr) {
+                    $("#status-texto").val("Erro ao buscar dados: " + (xhr.responseJSON ? xhr.responseJSON.erro : "Erro desconhecido"));
+                    clearInterval(timerId);
+                    timerId = null;
+                    $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                }
+            });
+        }
+
+        // 2. CHART.JS: Inicializa os gráficos
+        function inicializarGraficos() {
+            if (chartLine) chartLine.destroy();
+            if (chartTemp) chartTemp.destroy();
+            if (chartUmid) chartUmid.destroy();
+            if (chartLum) chartLum.destroy();
+
+        chartLine = new Chart(document.getElementById('chartLine'), {
+            type: 'line',
+            data: { labels: [], datasets: [
+                { label: 'Temp', data: [], borderColor: 'rgb(255, 99, 132)', tension: 0.1 },
+                { label: 'Umid', data: [], borderColor: 'rgb(54, 162, 235)', tension: 0.1 },
+                { label: 'Luz', data: [], borderColor: 'rgb(255, 206, 86)', tension: 0.1 }
+            ]},
+            options: {
+                maintainAspectRatio: false,   // <-- ESSENCIAL
+                responsive: true,
+                animation: false,
+                scales: {
+                    y: { beginAtZero: false }
+                }
+            }
+        });
+
+            chartTemp = criarGauge(document.getElementById('chartTempGauge'), 'Temperatura');
+            chartUmid = criarGauge(document.getElementById('chartUmidGauge'), 'Umidade');
+            chartLum = criarGauge(document.getElementById('chartLumGauge'), 'Luminosidade');
+        }
+
+        // 3. CHART.JS: Atualiza os gráficos com novos dados
+        function atualizarGraficos(dados) {
+
+            var timestamp = dados.timestamp.split(' ')[1];
+
+            chartLine.data.labels.push(timestamp);
+            chartLine.data.datasets[0].data.push(dados.temperatura);
+            chartLine.data.datasets[1].data.push(dados.umidade);
+            chartLine.data.datasets[2].data.push(dados.luminosidade);
+
+            if (chartLine.data.labels.length > 10) {
+                chartLine.data.labels.shift();
+                chartLine.data.datasets.forEach(dataset => dataset.data.shift());
+            }
+            chartLine.update();
+
+            atualizarGauge(chartTemp, dados.temperatura, $("#tempMin").val(), $("#tempMax").val());
+            atualizarGauge(chartUmid, dados.umidade, $("#umidMin").val(), $("#umidMax").val());
+            atualizarGauge(chartLum, dados.luminosidade, $("#lumMin").val(), $("#lumMax").val());
+        }
+
+        // 4. LÓGICA DE ALERTA: Verifica os limites
+        function verificarLimites(dados) {
+            var temp = dados.temperatura;
+            var umid = dados.umidade;
+            var lum = dados.luminosidade;
+
+            var tMin = parseFloat($("#tempMin").val());
+            var tMax = parseFloat($("#tempMax").val());
+            var uMin = parseFloat($("#umidMin").val());
+            var uMax = parseFloat($("#umidMax").val());
+            var lMin = parseFloat($("#lumMin").val());
+            var lMax = parseFloat($("#lumMax").val());
+
+            var statusAtual = "status_ok";
+            var statusMsg = "Nível OK.";
+            var ledCor = "#28a745"; // Verde
+
+            var tAtencao = tMax * 0.9;
+            var uAtencao = uMax * 0.9;
+            var lAtencao = lMax * 0.9;
+
+            if (temp > tMax || temp < tMin || umid > uMax || umid < uMin || lum > lMax || lum < lMin)
+            {
+                statusAtual = "status_critico";
+                statusMsg = "NÍVEL CRÍTICO: Sensor fora dos limites!";
+                ledCor = "#dc3545"; // Vermelho
+            }
+            else if (temp > tAtencao || umid > uAtencao || lum > lAtencao)
+            {
+                statusAtual = "status_atencao";
+                statusMsg = "NÍVEL DE ATENÇÃO: Sensor próximo do limite.";
+                ledCor = "#ffc107"; // Amarelo
+            }
+
+            $("#status-led").css("background-color", ledCor);
+            $("#status-texto").val(statusMsg);
+
+            if (statusAtual !== ultimoStatus) {
+                enviarAlerta(statusAtual);
+                ultimoStatus = statusAtual;
+            }
+        }
+
+        // 5. AJAX (POST): Envia o comando de alerta
+        function enviarAlerta(comando) {
+            var deviceId = $("#dispositivo").val();
+
+            var requestData = {
+                DeviceId: deviceId,
+                Comando: comando
+            };
+
+            $.ajax({
+                url: "/gerenciador/enviarcomando",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function () {
+                    console.log("Comando " + comando + " enviado com sucesso.");
+                },
+                error: function (xhr) {
+                    console.error("Erro ao enviar comando: " + (xhr.responseJSON ? xhr.responseJSON.erro : "Erro desconhecido"));
+                }
+            });
+        }
+
+        // Funções auxiliares para os gráficos tipo Gauge (Doughnut)
+        function criarGauge(ctx, label) {
+            return new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [0, 100],
+                        backgroundColor: ['#007bff', '#e9ecef'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    cutout: '70%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
+                }
+            });
+        }
+
+        function atualizarGauge(chart, valor, minimo, maximo) {
+            var displayValor = Math.max(0, valor);
+            var maxGauge = Math.max(0, maximo);
+
+            var cor = '#007bff'; // Azul (Padrão)
+            var valorAtencao = maximo * 0.9;
+
+            if (valor >= maximo || valor < minimo) cor = '#dc3545'; // Vermelho (Crítico)
+            else if (valor >= valorAtencao) cor = '#ffc107'; // Amarelo (Atenção)
+
+            chart.data.datasets[0].backgroundColor[0] = cor;
+            chart.data.datasets[0].data[0] = displayValor;
+            chart.data.datasets[0].data[1] = Math.max(0, maxGauge - displayValor);
+            chart.update();
+        }
+    </script>
+}

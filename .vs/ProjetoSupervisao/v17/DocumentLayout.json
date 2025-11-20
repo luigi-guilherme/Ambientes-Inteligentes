@@ -1,0 +1,612 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\home\\sobre.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\home\\sobre.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\usuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\usuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\padraodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\padraodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\conexaobd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\conexaobd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\helperdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\helperdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\dispositivodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\dispositivodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\dispositivo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\dispositivo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\gerenciador\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\gerenciador\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\local\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\local\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\local\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\local\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\dispositivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\helpercontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\helpercontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\gerenciadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\gerenciadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\dispositivo\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\dispositivo\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\dispositivoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\dispositivoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\dao\\localdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\dao\\localdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\padraocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\padraocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\temporealviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\temporealviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\historicosensorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\historicosensorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\views\\usuario\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\views\\usuario\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\usuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\usuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\controllers\\localcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\controllers\\localcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\localviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\localviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|z:\\projetosupervisao\\projetosupervisao\\projetosupervisao\\models\\padraoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65948ED7-5EAC-4CE4-A91B-95EC0A55AA8B}|ProjetoSupervisao\\ProjetoSupervisao.csproj|solutionrelative:projetosupervisao\\models\\padraoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Gerenciador\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Gerenciador\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Gerenciador\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Gerenciador\\Index.cshtml",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAALUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T23:28:07.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Local\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Local\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Local\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Local\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T21:44:07.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Login\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:22:05.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Usuario\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Usuario\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Usuario\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Usuario\\Index.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:03:17.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Home\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-19T01:11:02.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PadraoDAO.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\PadraoDAO.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\PadraoDAO.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\PadraoDAO.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\PadraoDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:32:10.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HelperDAO.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\HelperDAO.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\HelperDAO.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\HelperDAO.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\HelperDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:30:55.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConexaoBD.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\ConexaoBD.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\ConexaoBD.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\ConexaoBD.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\ConexaoBD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:23:35.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioDAO.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\UsuarioDAO.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\UsuarioDAO.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\UsuarioDAO.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\UsuarioDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:02:12.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sobre.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Home\\Sobre.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Home\\Sobre.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Home\\Sobre.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Home\\Sobre.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:32:02.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T21:45:50.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DispositivoDAO.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\DispositivoDAO.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\DispositivoDAO.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\DispositivoDAO.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\DispositivoDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:09:58.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAFkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:43:26.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dispositivo\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Dispositivo\\Index.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dispositivo\\Index.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Dispositivo\\Index.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAcwDcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:10:59.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Local\\Form.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Local\\Form.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Local\\Form.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Local\\Form.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwAoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T21:44:42.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DispositivoController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\DispositivoController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\DispositivoController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\DispositivoController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\DispositivoController.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAswAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:10:21.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HelperControllers.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\HelperControllers.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\HelperControllers.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\HelperControllers.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\HelperControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:20:05.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LocalDAO.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\LocalDAO.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\DAO\\LocalDAO.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\DAO\\LocalDAO.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\DAO\\LocalDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:41:33.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "site.css",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\wwwroot\\css\\site.css",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ProjetoSupervisao\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-19T00:57:10.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GerenciadorController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\GerenciadorController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\GerenciadorController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\GerenciadorController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\GerenciadorController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAwIUAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T23:27:14.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\DashboardController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwHEAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:41:43.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Form.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dispositivo\\Form.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Dispositivo\\Form.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Dispositivo\\Form.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Dispositivo\\Form.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:11:26.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DispositivoViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\DispositivoViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\DispositivoViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\DispositivoViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\DispositivoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:09:26.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PadraoController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\PadraoController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\PadraoController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\PadraoController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\PadraoController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwH8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:32:58.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\UsuarioController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:02:44.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HistoricoSensorViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\HistoricoSensorViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\HistoricoSensorViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\HistoricoSensorViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\HistoricoSensorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:41:18.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TempoRealViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\TempoRealViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\TempoRealViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\TempoRealViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\TempoRealViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T23:26:43.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Program.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Program.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Program.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Program.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwCIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:19:44.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\HomeController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:21:11.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\LoginController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:21:33.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Form.cshtml",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Usuario\\Form.cshtml",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Views\\Usuario\\Form.cshtml",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Views\\Usuario\\Form.cshtml",
+              "RelativeToolTip": "ProjetoSupervisao\\Views\\Usuario\\Form.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T22:05:53.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UsuarioViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\UsuarioViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\UsuarioViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\UsuarioViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\UsuarioViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T22:01:31.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "LocalController.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\LocalController.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Controllers\\LocalController.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Controllers\\LocalController.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Controllers\\LocalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:42:38.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LocalViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\LocalViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\LocalViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\LocalViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\LocalViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:38:40.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\ErrorViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:34:20.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PadraoViewModel.cs",
+              "DocumentMoniker": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\PadraoViewModel.cs",
+              "RelativeDocumentMoniker": "ProjetoSupervisao\\Models\\PadraoViewModel.cs",
+              "ToolTip": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\Models\\PadraoViewModel.cs",
+              "RelativeToolTip": "ProjetoSupervisao\\Models\\PadraoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T21:31:40.453Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+﻿@model DispositivoViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Cadastro de Dispositivo";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>Erro ao salvar!</strong>
+        <div asp-validation-summary="All"></div>
+    </div>
+}
+<form action="/dispositivo/save" method="post" enctype="multipart/form-data" class="col-md-6">
+
+    <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Device_Id_FIWARE" />
+
+
+    <div class="form-group mb-3">
+        <label for="Nome" class="form-label">Nome do Dispositivo</label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="LocalId" class="form-label">Local</label>
+        <select asp-for="LocalId" asp-items="ViewBag.Locais" class="form-control"></select>
+        <span asp-validation-for="LocalId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="ShortFiwareId" class="form-label">ID FIWARE (ex: Teste001)</label>
+        <input asp-for="ShortFiwareId" class="form-control" />
+        <span asp-validation-for="ShortFiwareId" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3 mt-3">
+        <label for="Imagem" class="form-label">Foto</label>
+        <br />
+        <input type="file" name="Imagem" id="Imagem" onchange="exibirImagem()" class="btn btn-secondary" />
+        <br />
+        <img id="imgPreview" src="data:image/jpeg;base64,@Model.ImagemEmBase64" class="img-responsive mt-2" width="100" />
+        <span asp-validation-for="Imagem" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Salvar Dados" class="btn btn-success" />
+        &nbsp;
+        <a href="/dispositivo/index" class="btn btn-secondary">Voltar</a>
+    </div>
+</form>
+
+<script>
+    function exibirImagem() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("Imagem").files[0]);
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("imgPreview").src = oFREvent.target.result;
+        };
+    }
+</script>

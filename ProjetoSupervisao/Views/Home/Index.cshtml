@@ -1,0 +1,82 @@
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 fw-bold">Ambientes Inteligentes</h1>
+    <p class="text-muted">Utilize os cards abaixo para gerenciar o sistema.</p>
+    <hr class="w-25 mx-auto mb-5" />
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-3 mb-4">
+            <div class="card bg-transparent shadow-sm border rounded-4 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Usuários</h5>
+                    <a class="btn btn-outline-primary w-100 mt-2"
+                       asp-controller="Usuario"
+                       asp-action="Index">
+                        Gerenciar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card bg-transparent shadow-sm border rounded-4 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt-fill display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Locais</h5>
+                    <a class="btn btn-outline-primary w-100 mt-2"
+                       asp-controller="Local"
+                       asp-action="Index">
+                        Gerenciar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card bg-transparent shadow-sm border rounded-4 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-cpu display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Dispositivos</h5>
+                    <a class="btn btn-outline-primary w-100 mt-2"
+                       asp-controller="Dispositivo"
+                       asp-action="Index">
+                        Gerenciar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card bg-transparent shadow-sm border rounded-4 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-speedometer2 display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Dashboard</h5>
+                    <a class="btn btn-outline-primary w-100 mt-2"
+                       asp-controller="Dashboard"
+                       asp-action="Index">
+                        Ver dados
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card bg-transparent shadow-sm border rounded-4 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-cpu display-4 text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Gerenciador</h5>
+                    <a class="btn btn-outline-primary w-100 mt-2"
+                       asp-controller="Gerenciador"
+                       asp-action="Index">
+                        Gerenciar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
