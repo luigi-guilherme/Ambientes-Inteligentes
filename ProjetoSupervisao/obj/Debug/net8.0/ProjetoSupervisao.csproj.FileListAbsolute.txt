@@ -79,3 +79,43 @@ Z:\ProjetoSupervisao\ProjetoSupervisao\ProjetoSupervisao\obj\Debug\net8.0\refint
 Z:\ProjetoSupervisao\ProjetoSupervisao\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.pdb
 Z:\ProjetoSupervisao\ProjetoSupervisao\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.genruntimeconfig.cache
 Z:\ProjetoSupervisao\ProjetoSupervisao\ProjetoSupervisao\obj\Debug\net8.0\ref\ProjetoSupervisao.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\appsettings.Development.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\appsettings.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.staticwebassets.runtime.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.exe
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.deps.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.runtimeconfig.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\ProjetoSupervisao.pdb
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\Newtonsoft.Json.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\System.Data.SqlClient.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.csproj.AssemblyReference.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.GeneratedMSBuildEditorConfig.editorconfig
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.AssemblyInfoInputs.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.AssemblyInfo.cs
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.csproj.CoreCompileInputs.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.MvcApplicationPartsAssemblyInfo.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.RazorAssemblyInfo.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.RazorAssemblyInfo.cs
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.sourcelink.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets.build.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets.development.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets\msbuild.ProjetoSupervisao.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets\msbuild.build.ProjetoSupervisao.props
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ProjetoSupervisao.props
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ProjetoSupervisao.props
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\staticwebassets.pack.json
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\scopedcss\bundle\ProjetoSupervisao.styles.css
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\scopedcss\projectbundle\ProjetoSupervisao.bundle.scp.css
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoS.02C83A59.Up2Date
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\refint\ProjetoSupervisao.dll
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.pdb
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ProjetoSupervisao.genruntimeconfig.cache
+Z:\EC5\LINGUAGEM DE PROGRAMAÇÃO I\AmbientesInteligentes\ProjetoSupervisao\obj\Debug\net8.0\ref\ProjetoSupervisao.dll

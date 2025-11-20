@@ -514,23 +514,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\082230009\\.nuget\\packages\\": {},
+    "C:\\Users\\082230006\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao.csproj",
+      "projectUniqueName": "Z:\\EC5\\LINGUAGEM DE PROGRAMAÇÃO I\\AmbientesInteligentes\\ProjetoSupervisao\\ProjetoSupervisao.csproj",
       "projectName": "ProjetoSupervisao",
-      "projectPath": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao.csproj",
-      "packagesPath": "C:\\Users\\082230009\\.nuget\\packages\\",
-      "outputPath": "Z:\\ProjetoSupervisao\\ProjetoSupervisao\\ProjetoSupervisao\\obj\\",
+      "projectPath": "Z:\\EC5\\LINGUAGEM DE PROGRAMAÇÃO I\\AmbientesInteligentes\\ProjetoSupervisao\\ProjetoSupervisao.csproj",
+      "packagesPath": "C:\\Users\\082230006\\.nuget\\packages\\",
+      "outputPath": "Z:\\EC5\\LINGUAGEM DE PROGRAMAÇÃO I\\AmbientesInteligentes\\ProjetoSupervisao\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\082230009\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\082230006\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
