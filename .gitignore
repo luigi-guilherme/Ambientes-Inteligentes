@@ -1,1 +1,32 @@
+# Visual Studio
 .vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Build
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+ARM/
+ARM64/
+
+# Pacotes
+packages/
+*.nupkg
+
+# Logs e temporários
+*.log
+*.cache
+*.tmp
+
+# Publicação
+pub/
+publish/
+
+# Configs locais
+appsettings.Development.json
