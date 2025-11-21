@@ -1,45 +1,77 @@
 ﻿@{
     ViewData["Title"] = "Sobre o Sistema";
 }
-<h2>@ViewData["Title"]</h2>
 
-<hr />
+<div class="container mt-4">
 
-<div class="row">
-    <div class="col-md-8">
-        <p>
-            Este sistema foi desenvolvido como parte do trabalho interdisciplinar das disciplinas de
-            <strong>Linguagem de Programação I</strong> (Prof. Eduardo Rosalem) e
-            <strong>Sistemas Embarcados</strong> (Prof. Fábio Cabrini).
-        </p>
-        <p>
-            O objetivo é criar um software de supervisão
-            capaz de monitorar dados de dispositivos IoT (ESP32)
-            utilizando a plataforma FIWARE.
-            A aplicação web gerencia os dispositivos, usuários e locais monitorados,
-            além de exibir dados históricos e alertas.
-        </p>
-
-        <h4 class="mt-4">Tecnologias Utilizadas</h4>
-        <ul>
-            <li>ASP.NET Core 8 (MVC)</li>
-            <li>SQL Server</li>
-            <li>Padrão DAO com Herança</li>
-            <li>FIWARE (Orion, IoT Agent, STH-Comet)</li>
-            <li>Chart.js (para Dashboards)</li>
-            <li>Ajax (para Consultas Dinâmicas)</li>
-        </ul>
+    <div class="text-center mb-4">
+        <h2 class="fw-semibold">@ViewData["Title"]</h2>
+        <p class="text-muted">Informações gerais sobre o projeto e seus desenvolvedores</p>
     </div>
 
-    <div class="col-md-4">
-        <h3>Integrantes do Grupo</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Nome Aluno 1 - RA: XXXXXX</li>
-            <li class="list-group-item">Nome Aluno 2 - RA: XXXXXX</li>
-            <li class="list-group-item">Nome Aluno 3 - RA: XXXXXX</li>
-            <li class="list-group-item">Nome Aluno 4 - RA: XXXXXX</li>
-            <li class="list-group-item">Nome Aluno 5 - RA: XXXXXX</li>
-            <li class="list-group-item">Nome Aluno 6 - RA: XXXXXX</li>
-        </ul>
+    <div class="row g-4">
+
+        <!-- Sobre o projeto -->
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body">
+
+                    <h4 class="fw-bold mb-3">
+                        <i class="bi bi-info-circle text-primary me-2"></i>
+                        Sobre o Projeto
+                    </h4>
+
+                    <p>
+                        Este sistema foi desenvolvido como parte do trabalho interdisciplinar das disciplinas de
+                        <strong>Linguagem de Programação I</strong> (Prof. Eduardo Rosalem) e
+                        <strong>Sistemas Embarcados</strong> (Prof. Fábio Cabrini).
+                    </p>
+
+                    <p>
+                        O objetivo é criar um software de supervisão capaz de monitorar dados de dispositivos IoT (ESP32)
+                        utilizando a plataforma FIWARE.
+                        A aplicação web gerencia os dispositivos, usuários e locais monitorados,
+                        além de exibir dados históricos e alertas.
+                    </p>
+
+                    <h5 class="mt-4 fw-bold">
+                        <i class="bi bi-gear-fill text-primary me-2"></i>
+                        Tecnologias Utilizadas
+                    </h5>
+
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item">ASP.NET Core 8 (MVC)</li>
+                        <li class="list-group-item">SQL Server</li>
+                        <li class="list-group-item">Padrão DAO com Herança</li>
+                        <li class="list-group-item">FIWARE (Orion, IoT Agent, STH-Comet)</li>
+                        <li class="list-group-item">Chart.js (para Dashboards)</li>
+                        <li class="list-group-item">Ajax (para Consultas Dinâmicas)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integrantes -->
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0 rounded-4 h-100">
+                <div class="card-body">
+                    <h4 class="fw-bold mb-3">
+                        <i class="bi bi-people-fill text-primary me-2"></i>
+                        Integrantes do Grupo
+                    </h4>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">Guilherme de Oliveira Mattos - RA: 082230009</li>
+                        <li class="list-group-item">Luigi Guilherme Pereira Silva - RA: 082230025</li>
+                        <li class="list-group-item">Paulo Henrique de Carvalho Santos - RA: 082230006</li>
+                        <li class="list-group-item">Pedro Henrique de Holanda Carvalho - RA: 082230005</li>
+                        <li class="list-group-item">Tayson Moisés Costa do Carmo - RA: 082230008</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </div>

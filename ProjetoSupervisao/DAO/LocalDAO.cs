@@ -19,7 +19,13 @@ namespace ProjetoSupervisao.DAO
             {
                 new SqlParameter("id", model.Id),
                 new SqlParameter("nome", model.Nome),
-                new SqlParameter("descricao", model.Descricao ?? (object)DBNull.Value)
+                new SqlParameter("descricao", model.Descricao ?? (object)DBNull.Value),
+                new SqlParameter("tempMin", model.TempMin),
+                new SqlParameter("tempMax", model.TempMax),
+                new SqlParameter("umidadeMin", model.UmidadeMin),
+                new SqlParameter("umidadeMax", model.UmidadeMax),
+                new SqlParameter("luminosidadeMin", model.LuminosidadeMin),
+                new SqlParameter("luminosidadeMax", model.LuminosidadeMax)
             };
         }
 
@@ -29,7 +35,13 @@ namespace ProjetoSupervisao.DAO
             {
                 Id = Convert.ToInt32(registro["Id"]),
                 Nome = registro["Nome"].ToString(),
-                Descricao = registro["Descricao"] != DBNull.Value ? registro["Descricao"].ToString() : null
+                Descricao = registro["Descricao"] != DBNull.Value ? registro["Descricao"].ToString() : null,
+                TempMin = Convert.ToDouble(registro["TempMin"]),
+                TempMax = Convert.ToDouble(registro["TempMax"]),
+                UmidadeMin = Convert.ToDouble(registro["UmidadeMin"]),
+                UmidadeMax = Convert.ToDouble(registro["UmidadeMax"]),
+                LuminosidadeMin = Convert.ToDouble(registro["LuminosidadeMin"]),
+                LuminosidadeMax = Convert.ToDouble(registro["LuminosidadeMax"])
             };
         }
     }
