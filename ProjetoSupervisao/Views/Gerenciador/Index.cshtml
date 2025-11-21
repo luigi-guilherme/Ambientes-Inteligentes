@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Gerenciador de Dispositivos";
+    ViewData["Title"] = "Monitoramento";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,50 +9,93 @@
 </div>
 <p>Monitoramento em tempo real dos sensores e acionamento de alertas.</p>
 
+<div>
+    <a href="/Home/Index" class="btn btn-secondary mb-3">Voltar</a>
+</div>
+
 <fieldset class="form-group border p-3 mb-3">
     <legend class="w-auto px-2">Configurações</legend>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
+            <label>Local</label>
+            <select id="local" class="form-control" asp-items="ViewBag.Locais"></select>
+        </div>
+        <div class="col-md-2">
             <label>Dispositivo</label>
-            <select id="dispositivo" class="form-control" asp-items="ViewBag.Dispositivos"></select>
+            <select id="dispositivo" class="form-control" disabled>
+                <option value="0">Selecione um dispositivo...</option>
+            </select>
         </div>
         <div class="col-md-2">
             <label>&nbsp;</label>
             <button id="btnMonitorar" class="btn btn-success w-100">Iniciar</button>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-2">
+            <label>&nbsp;</label>
+            <button id="btnEditarTriggers" class="btn btn-primary w-100" disabled>
+                <i class="bi bi-pencil"></i> Editar Limites
+            </button>
+        </div>
+        <div class="col-md-4">
             <label>Status</label>
             <input type="text" id="status-texto" class="form-control" value="Aguardando início..." readonly />
         </div>
     </div>
 </fieldset>
 
-<fieldset class="form-group border p-3 mb-3">
-    <legend class="w-auto px-2">Limites de Alerta (Triggers)</legend>
-    <div class="row">
-        <div class="col-md-4">
-            <label>Temp. (Min/Max)</label>
-            <div class="input-group">
-                <input type="number" id="tempMin" class="form-control" value="15">
-                <input type="number" id="tempMax" class="form-control" value="25">
+<!--GRID DE EDIÇÃO DE TRIGGERS-->
+<div id="triggerEditContainer" style="display: none; margin-bottom: 20px;">
+    <fieldset class="form-group border p-3 mb-3" style="background-color: #f8f9fa;">
+        <legend class="w-auto px-2">Editar Limites de Alerta</legend>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <label><strong>Temperatura (°C)</strong></label>
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Mín</span>
+                    <input type="number" id="tempMin-edit" class="form-control" step="0.1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Máx</span>
+                    <input type="number" id="tempMax-edit" class="form-control" step="0.1">
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label><strong>Umidade (%)</strong></label>
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Mín</span>
+                    <input type="number" id="umidMin-edit" class="form-control" step="0.1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Máx</span>
+                    <input type="number" id="umidMax-edit" class="form-control" step="0.1">
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label><strong>Luminosidade (Lux)</strong></label>
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Mín</span>
+                    <input type="number" id="lumMin-edit" class="form-control" step="0.1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Máx</span>
+                    <input type="number" id="lumMax-edit" class="form-control" step="0.1">
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <label>Umidade (Min/Max)</label>
-            <div class="input-group">
-                <input type="number" id="umidMin" class="form-control" value="30">
-                <input type="number" id="umidMax" class="form-control" value="50">
-            </div>
+
+        <div class="mt-3">
+            <button id="btnSalvarTriggers" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Salvar
+            </button>
+            <button id="btnCancelarTriggers" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Cancelar
+            </button>
         </div>
-        <div class="col-md-4">
-            <label>Luz (Min/Max)</label>
-            <div class="input-group">
-                <input type="number" id="lumMin" class="form-control" value="0">
-                <input type="number" id="lumMax" class="form-control" value="30">
-            </div>
-        </div>
-    </div>
-</fieldset>
+    </fieldset>
+</div>
 
 <div class="row">
     <div class="col-md-12 mb-3">
@@ -64,7 +107,6 @@
 </div>
 
 <div class="row mt-4">
-
     <div class="col-md-4 text-center">
         <h4 class="mb-2">Temperatura</h4>
         <div class="mx-auto" style="height:160px; width:160px;">
@@ -95,38 +137,269 @@
         var timerId = null;
         var chartLine, chartTemp, chartUmid, chartLum;
         var ultimoStatus = "";
+        var localIdSelecionado = 0;
+        var dispositivoSelecionado = "";
 
+        // ============ EVENTOS DOS COMBOS ============
+
+        // Quando seleciona um local
+        $("#local").change(function() {
+            var localId = $(this).val();
+            localIdSelecionado = parseInt(localId);
+
+            if (localId == "0") {
+                // Parar monitoramento se estiver rodando
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                    $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                    $("#status-texto").val("Aguardando início...");
+                }
+
+                // Desabilitar combo de dispositivos
+                $("#dispositivo").prop("disabled", true).html('<option value="0">Selecione um dispositivo...</option>');
+                $("#btnEditarTriggers").prop("disabled", true);
+                $("#triggerEditContainer").hide();
+                dispositivoSelecionado = "";
+                return;
+            }
+
+            // Parar monitoramento se estiver rodando (antes de carregar novo local)
+            if (timerId) {
+                clearInterval(timerId);
+                timerId = null;
+                $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                $("#status-texto").val("Aguardando início...");
+            }
+
+            // Carregar dispositivos do local
+            carregarDispositivosPorLocal(localId);
+        });
+
+        // Quando seleciona um dispositivo
+        $("#dispositivo").change(function() {
+            var deviceId = $(this).val();
+            dispositivoSelecionado = deviceId;
+
+            if (deviceId == "0") {
+                // Parar monitoramento se estiver rodando
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                    $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                    $("#status-texto").val("Aguardando início...");
+                }
+
+                $("#btnEditarTriggers").prop("disabled", true);
+                return;
+            }
+
+            // Parar monitoramento se estiver rodando (antes de mudar dispositivo)
+            if (timerId) {
+                clearInterval(timerId);
+                timerId = null;
+                $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                $("#status-texto").val("Aguardando início...");
+            }
+
+            // Habilitar botão editar
+            $("#btnEditarTriggers").prop("disabled", false);
+        });
+
+        // ============ CARREGAR DISPOSITIVOS DO LOCAL ============
+        function carregarDispositivosPorLocal(localId) {
+            $.ajax({
+                url: "/gerenciador/obterdispositivosporlocal",
+                type: "GET",
+                data: { localId: localId },
+                success: function (dispositivos) {
+                    var html = '';
+                    dispositivos.forEach(function(disp) {
+                        html += '<option value="' + disp.value + '">' + disp.text + '</option>';
+                    });
+                    $("#dispositivo").prop("disabled", false).html(html);
+                    dispositivoSelecionado = "";
+                },
+                error: function () {
+                    alert("Erro ao carregar dispositivos");
+                    $("#dispositivo").prop("disabled", true);
+                }
+            });
+        }
+
+        // ============ CARREGAR TRIGGERS DO LOCAL ============
+        function carregarTriggers(callback) {
+            if (localIdSelecionado <= 0) {
+                if (callback) callback();
+                return;
+            }
+
+            $.ajax({
+                url: "/gerenciador/obtertriggersporlocal",
+                type: "GET",
+                data: { localId: localIdSelecionado },
+                success: function (triggers) {
+                    // Preencher campos de edição com valores atuais
+                    $("#tempMin-edit").val(triggers.tempMin);
+                    $("#tempMax-edit").val(triggers.tempMax);
+                    $("#umidMin-edit").val(triggers.umidadeMin);
+                    $("#umidMax-edit").val(triggers.umidadeMax);
+                    $("#lumMin-edit").val(triggers.luminosidadeMin);
+                    $("#lumMax-edit").val(triggers.luminosidadeMax);
+
+                    if (callback) callback();
+                },
+                error: function () {
+                    console.log("Erro ao carregar triggers");
+                    if (callback) callback();
+                }
+            });
+        }
+
+        // ============ BOTÃO EDITAR TRIGGERS ============
+        $("#btnEditarTriggers").click(function() {
+            if (localIdSelecionado <= 0) {
+                alert("Selecione um local.");
+                return;
+            }
+
+            // Carregar triggers atuais
+            carregarTriggers(function() {
+                // Mostrar grid de edição
+                $("#triggerEditContainer").show();
+                $("#btnEditarTriggers").prop("disabled", true);
+            });
+        });
+
+        // ============ BOTÃO CANCELAR EDIÇÃO ============
+        $("#btnCancelarTriggers").click(function() {
+            // Ocultar grid de edição
+            $("#triggerEditContainer").hide();
+            $("#btnEditarTriggers").prop("disabled", false);
+        });
+
+        // ============ BOTÃO SALVAR TRIGGERS ============
+        $("#btnSalvarTriggers").click(function() {
+            if (localIdSelecionado <= 0) {
+                alert("Selecione um local.");
+                return;
+            }
+
+            // Validar valores
+            var tempMin = parseFloat($("#tempMin-edit").val());
+            var tempMax = parseFloat($("#tempMax-edit").val());
+            var umidMin = parseFloat($("#umidMin-edit").val());
+            var umidMax = parseFloat($("#umidMax-edit").val());
+            var lumMin = parseFloat($("#lumMin-edit").val());
+            var lumMax = parseFloat($("#lumMax-edit").val());
+
+            if (isNaN(tempMin) || isNaN(tempMax) || isNaN(umidMin) || isNaN(umidMax) || isNaN(lumMin) || isNaN(lumMax)) {
+                alert("Por favor, preencha todos os valores com números válidos.");
+                return;
+            }
+
+            if (tempMin >= tempMax || umidMin >= umidMax || lumMin >= lumMax) {
+                alert("O valor mínimo deve ser menor que o valor máximo.");
+                return;
+            }
+
+            var requestData = {
+                LocalId: localIdSelecionado,
+                TempMin: tempMin,
+                TempMax: tempMax,
+                UmidadeMin: umidMin,
+                UmidadeMax: umidMax,
+                LuminosidadeMin: lumMin,
+                LuminosidadeMax: lumMax
+            };
+
+            $.ajax({
+                url: "/gerenciador/salvartriggersporlocal",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (response) {
+                    // Fechar grid de edição
+                    $("#triggerEditContainer").hide();
+                    $("#btnEditarTriggers").prop("disabled", false);
+
+                    // Mostrar mensagem de sucesso
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Sucesso!',
+                        text: 'Os limites do local foram atualizados.',
+                        confirmButtonColor: '#28a745',
+                        timer: 3000, // Fecha automaticamente após 3s
+                        timerProgressBar: true
+                    });
+                },
+                error: function (xhr) {
+                    var erroMsg = xhr.responseJSON ? xhr.responseJSON.erro : "Ocorreu um erro desconhecido.";
+
+                    // Mostrar mensagem de erro
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Erro ao salvar limites: ' + erroMsg,
+                        confirmButtonColor: '#d33' 
+                    });
+                }
+            });
+        });
+
+        // ============ BOTÃO MONITORAR (ALTERADO) ============
         $("#btnMonitorar").click(function() {
             if (timerId) {
-                // Para o monitoramento
+                // --- PARANDO O MONITORAMENTO ---
                 clearInterval(timerId);
                 timerId = null;
                 $(this).removeClass("btn-danger").addClass("btn-success").text("Iniciar");
                 $("#status-texto").val("Monitoramento parado.");
+
+                // NOVA LINHA: Envia comando 'off' imediatamente ao parar
+                enviarAlerta("off");
+
             } else {
-                // Inicia o monitoramento
+                // --- INICIANDO O MONITORAMENTO ---
                 var deviceId = $("#dispositivo").val();
                 if (deviceId == "0") {
-                    alert("Selecione um dispositivo.");
+                    alert("Selecione um local e um dispositivo.");
                     return;
                 }
+
                 $(this).removeClass("btn-success").addClass("btn-danger").text("Parar");
+                $("#status-texto").val("Iniciando...");
 
-                inicializarGraficos();
-                buscarDados();
+                // NOVA LINHA: Envia comando 'status_ok' imediatamente ao iniciar
+                enviarAlerta("status_ok");
+                // Resetamos o status para garantir a sincronia
+                ultimoStatus = "status_ok";
 
-                timerId = setInterval(buscarDados, 5000);
+                // Carregar triggers
+                carregarTriggers(function() {
+                    inicializarGraficos();
+                    buscarDados();
+                    timerId = setInterval(buscarDados, 3000);
+                });
             }
         });
 
-        // 1. AJAX: Busca os dados na API
+        // ============ BUSCAR DADOS EM TEMPO REAL ============
         function buscarDados() {
             var deviceId = $("#dispositivo").val();
+
+            if (deviceId == "0" || !deviceId) {
+                clearInterval(timerId);
+                timerId = null;
+                $("#btnMonitorar").removeClass("btn-danger").addClass("btn-success").text("Iniciar");
+                $("#status-texto").val("Monitoramento parado.");
+                return;
+            }
 
             $.ajax({
                 url: "/gerenciador/obterdadosatuais",
                 type: "GET",
-                dataType: "json", // Garante que o jQuery vai parsear a resposta
+                dataType: "json",
                 data: { deviceId: deviceId },
                 success: function (dados) {
                     $("#status-texto").val("Dados recebidos em: " + new Date().toLocaleTimeString());
@@ -142,38 +415,40 @@
             });
         }
 
-        // 2. CHART.JS: Inicializa os gráficos
+        // ============ INICIALIZAR GRÁFICOS ============
         function inicializarGraficos() {
             if (chartLine) chartLine.destroy();
             if (chartTemp) chartTemp.destroy();
             if (chartUmid) chartUmid.destroy();
             if (chartLum) chartLum.destroy();
 
-        chartLine = new Chart(document.getElementById('chartLine'), {
-            type: 'line',
-            data: { labels: [], datasets: [
-                { label: 'Temp', data: [], borderColor: 'rgb(255, 99, 132)', tension: 0.1 },
-                { label: 'Umid', data: [], borderColor: 'rgb(54, 162, 235)', tension: 0.1 },
-                { label: 'Luz', data: [], borderColor: 'rgb(255, 206, 86)', tension: 0.1 }
-            ]},
-            options: {
-                maintainAspectRatio: false,   // <-- ESSENCIAL
-                responsive: true,
-                animation: false,
-                scales: {
-                    y: { beginAtZero: false }
+            chartLine = new Chart(document.getElementById('chartLine'), {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        { label: 'Temp', data: [], borderColor: 'rgb(255, 99, 132)', tension: 0.1 },
+                        { label: 'Umid', data: [], borderColor: 'rgb(54, 162, 235)', tension: 0.1 },
+                        { label: 'Luz', data: [], borderColor: 'rgb(255, 206, 86)', tension: 0.1 }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    animation: false,
+                    scales: {
+                        y: { beginAtZero: false }
+                    }
                 }
-            }
-        });
+            });
 
             chartTemp = criarGauge(document.getElementById('chartTempGauge'), 'Temperatura');
             chartUmid = criarGauge(document.getElementById('chartUmidGauge'), 'Umidade');
             chartLum = criarGauge(document.getElementById('chartLumGauge'), 'Luminosidade');
         }
 
-        // 3. CHART.JS: Atualiza os gráficos com novos dados
+        // ============ ATUALIZAR GRÁFICOS ============
         function atualizarGraficos(dados) {
-
             var timestamp = dados.timestamp.split(' ')[1];
 
             chartLine.data.labels.push(timestamp);
@@ -187,40 +462,53 @@
             }
             chartLine.update();
 
-            atualizarGauge(chartTemp, dados.temperatura, $("#tempMin").val(), $("#tempMax").val());
-            atualizarGauge(chartUmid, dados.umidade, $("#umidMin").val(), $("#umidMax").val());
-            atualizarGauge(chartLum, dados.luminosidade, $("#lumMin").val(), $("#lumMax").val());
+            // Usar valores reais dos triggers (min/max)
+            atualizarGauge(chartTemp, dados.temperatura,
+                parseFloat($("#tempMin-edit").val() || 15),
+                parseFloat($("#tempMax-edit").val() || 25));
+
+            atualizarGauge(chartUmid, dados.umidade,
+                parseFloat($("#umidMin-edit").val() || 30),
+                parseFloat($("#umidMax-edit").val() || 50));
+
+            atualizarGauge(chartLum, dados.luminosidade,
+                parseFloat($("#lumMin-edit").val() || 0),
+                parseFloat($("#lumMax-edit").val() || 30));
         }
 
-        // 4. LÓGICA DE ALERTA: Verifica os limites
+        // ============ VERIFICAR LIMITES E ALERTAS ============
         function verificarLimites(dados) {
             var temp = dados.temperatura;
             var umid = dados.umidade;
             var lum = dados.luminosidade;
 
-            var tMin = parseFloat($("#tempMin").val());
-            var tMax = parseFloat($("#tempMax").val());
-            var uMin = parseFloat($("#umidMin").val());
-            var uMax = parseFloat($("#umidMax").val());
-            var lMin = parseFloat($("#lumMin").val());
-            var lMax = parseFloat($("#lumMax").val());
+            var tMin = parseFloat($("#tempMin-edit").val() || 15);
+            var tMax = parseFloat($("#tempMax-edit").val() || 25);
+            var uMin = parseFloat($("#umidMin-edit").val() || 30);
+            var uMax = parseFloat($("#umidMax-edit").val() || 50);
+            var lMin = parseFloat($("#lumMin-edit").val() || 0);
+            var lMax = parseFloat($("#lumMax-edit").val() || 30);
 
             var statusAtual = "status_ok";
             var statusMsg = "Nível OK.";
             var ledCor = "#28a745"; // Verde
 
-            var tAtencao = tMax * 0.9;
-            var uAtencao = uMax * 0.9;
-            var lAtencao = lMax * 0.9;
+            // Calcular zonas de atenção para MÍNIMO e MÁXIMO
+            var tAtencaoMax = tMax * 0.9;
+            var tAtencaoMin = tMin + (tMax - tMin) * 0.1;
 
-            if (temp > tMax || temp < tMin || umid > uMax || umid < uMin || lum > lMax || lum < lMin)
-            {
+            var uAtencaoMax = uMax * 0.9;
+            var uAtencaoMin = uMin + (uMax - uMin) * 0.1;
+
+            var lAtencaoMax = lMax * 0.9;
+            var lAtencaoMin = lMin + (lMax - lMin) * 0.1;
+
+            if (temp > tMax || temp < tMin || umid > uMax || umid < uMin || lum > lMax || lum < lMin) {
                 statusAtual = "status_critico";
                 statusMsg = "NÍVEL CRÍTICO: Sensor fora dos limites!";
                 ledCor = "#dc3545"; // Vermelho
             }
-            else if (temp > tAtencao || umid > uAtencao || lum > lAtencao)
-            {
+            else if (temp > tAtencaoMax || temp < tAtencaoMin || umid > uAtencaoMax || umid < uAtencaoMin || lum > lAtencaoMax || lum < lAtencaoMin) {
                 statusAtual = "status_atencao";
                 statusMsg = "NÍVEL DE ATENÇÃO: Sensor próximo do limite.";
                 ledCor = "#ffc107"; // Amarelo
@@ -235,9 +523,11 @@
             }
         }
 
-        // 5. AJAX (POST): Envia o comando de alerta
+        // ============ ENVIAR ALERTA ============
         function enviarAlerta(comando) {
             var deviceId = $("#dispositivo").val();
+            // Validação simples para não tentar enviar se não tiver dispositivo
+            if (!deviceId || deviceId == "0") return;
 
             var requestData = {
                 DeviceId: deviceId,
@@ -258,7 +548,7 @@
             });
         }
 
-        // Funções auxiliares para os gráficos tipo Gauge (Doughnut)
+        // ============ FUNÇÕES AUXILIARES - GRÁFICOS GAUGE ============
         function criarGauge(ctx, label) {
             return new Chart(ctx, {
                 type: 'doughnut',
@@ -280,15 +570,22 @@
             });
         }
 
+        //Atualiza os gráficos circulares
         function atualizarGauge(chart, valor, minimo, maximo) {
             var displayValor = Math.max(0, valor);
             var maxGauge = Math.max(0, maximo);
 
-            var cor = '#007bff'; // Azul (Padrão)
-            var valorAtencao = maximo * 0.9;
+            var cor = '#007bff'; // Azul
 
-            if (valor >= maximo || valor < minimo) cor = '#dc3545'; // Vermelho (Crítico)
-            else if (valor >= valorAtencao) cor = '#ffc107'; // Amarelo (Atenção)
+            // Calcular atenção para MÍNIMO e MÁXIMO
+            var valorAtencaoMax = maximo * 0.9;
+            var valorAtencaoMin = minimo + (maximo - minimo) * 0.1;
+
+            if (valor >= maximo || valor < minimo) {
+                cor = '#dc3545'; // Vermelho
+            } else if (valor >= valorAtencaoMax || valor < valorAtencaoMin) {
+                cor = '#ffc107'; // Amarelo
+            }
 
             chart.data.datasets[0].backgroundColor[0] = cor;
             chart.data.datasets[0].data[0] = displayValor;

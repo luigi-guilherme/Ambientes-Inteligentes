@@ -1,4 +1,5 @@
 using ProjetoSupervisao.Controllers;
+using ProjetoSupervisao.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
+
+builder.Services.AddScoped<OrionApiService>();  
+builder.Services.AddScoped<GerenciadorService>();
 
 var app = builder.Build();
 

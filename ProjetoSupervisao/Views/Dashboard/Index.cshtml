@@ -1,10 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard de Sensores";
+    ViewData["Title"] = "Histórico de Dados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@ViewData["Title"]</h2>
-<p>Consulta histórica de dados dos sensores (via FIWARE STH-Comet).</p>
+<p>Consulta histórica de dados dos sensores</p>
+
+<div>
+    <a href="/Home/Index" class="btn btn-secondary mb-3">Voltar</a>
+</div>
 
 <fieldset class="form-group border p-3 mb-3">
     <legend class="w-auto px-2">Filtros</legend>

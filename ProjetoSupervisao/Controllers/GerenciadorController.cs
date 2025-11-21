@@ -1,40 +1,82 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json.Linq;
-using ProjetoSupervisao.DAO;
 using ProjetoSupervisao.Models;
-using System.Globalization;
-using System.Text;
+using ProjetoSupervisao.Services;
 
 namespace ProjetoSupervisao.Controllers
 {
-    public class GerenciadorController : PadraoController<PadraoViewModel>
+    public class GerenciadorController : Controller
     {
-        private readonly string _orionUrl = "http://3.92.218.251:1026";
+        private readonly OrionApiService _orionService;
+        private readonly GerenciadorService _gerenciadorService;
 
-        public GerenciadorController()
+        public GerenciadorController(OrionApiService orionService, GerenciadorService gerenciadorService)
         {
-            DAO = null;
+            _orionService = orionService;
+            _gerenciadorService = gerenciadorService;
         }
 
-        public override IActionResult Index()
+        public IActionResult Index()
         {
-            CarregaDispositivos();
+            CarregarComboLocais();
             return View();
         }
 
-        private void CarregaDispositivos()
+        private void CarregarComboLocais()
         {
-            var dispositivoDAO = new DispositivoDAO();
-            var dispositivos = dispositivoDAO.ListaParaCombo();
-            var listaSelect = new List<SelectListItem>();
-
-            listaSelect.Add(new SelectListItem("Selecione um dispositivo...", "0"));
-            foreach (var d in dispositivos)
+            var locais = _gerenciadorService.ObterTodosLocais();
+            var listaSelect = new List<SelectListItem>
             {
-                listaSelect.Add(new SelectListItem(d.Nome, d.Device_Id_FIWARE));
+                new SelectListItem("Selecione um local...", "0")
+            };
+            listaSelect.AddRange(locais.Select(l => new SelectListItem(l.Nome, l.Id.ToString())));
+            ViewBag.Locais = listaSelect;
+        }
+
+        [HttpGet]
+        public IActionResult ObterDispositivosPorLocal(int localId)
+        {
+            try
+            {
+                var dispositivos = _gerenciadorService.ObterDispositivosPorLocal(localId);
+
+                var listaJson = new List<object> { new { text = "Selecione um dispositivo...", value = "0" } };
+                listaJson.AddRange(dispositivos.Select(d => new { text = d.Nome, value = d.Device_Id_FIWARE }));
+
+                return Json(listaJson);
             }
-            ViewBag.Dispositivos = listaSelect;
+            catch (Exception ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        public IActionResult ObterTriggersPorLocal(int localId)
+        {
+            try
+            {
+                var triggers = _gerenciadorService.ObterTriggersDoLocal(localId);
+                return Json(triggers);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SalvarTriggersPorLocal([FromBody] SalvarTriggersLocalRequest request)
+        {
+            try
+            {
+                _gerenciadorService.AtualizarTriggersDoLocal(request);
+                return Json(new { success = true, message = "Limites atualizados com sucesso" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
         }
 
         [HttpGet]
@@ -42,18 +84,19 @@ namespace ProjetoSupervisao.Controllers
         {
             try
             {
-                var viewModel = new TempoRealViewModel();
-
-                var tempTask = ChamarApiOrion(deviceId, "temperature");
-                var umidTask = ChamarApiOrion(deviceId, "humidity");
-                var lumTask = ChamarApiOrion(deviceId, "luminosity");
+                var tempTask = _orionService.ObterValorAtributoAsync(deviceId, "temperature");
+                var umidTask = _orionService.ObterValorAtributoAsync(deviceId, "humidity");
+                var lumTask = _orionService.ObterValorAtributoAsync(deviceId, "luminosity");
 
                 await Task.WhenAll(tempTask, umidTask, lumTask);
 
-                viewModel.Temperatura = tempTask.Result.Valor;
-                viewModel.Umidade = umidTask.Result.Valor;
-                viewModel.Luminosidade = lumTask.Result.Valor;
-                viewModel.Timestamp = tempTask.Result.Timestamp;
+                var viewModel = new TempoRealViewModel
+                {
+                    Temperatura = tempTask.Result.Valor,
+                    Umidade = umidTask.Result.Valor,
+                    Luminosidade = lumTask.Result.Valor,
+                    Timestamp = tempTask.Result.Timestamp
+                };
 
                 return Json(viewModel);
             }
@@ -68,28 +111,7 @@ namespace ProjetoSupervisao.Controllers
         {
             try
             {
-                string url = $"{_orionUrl}/v2/entities/{model.DeviceId}/attrs";
-
-                string payload = $@"{{
-                    ""{model.Comando}"": {{
-                        ""type"": ""command"",
-                        ""value"": """"
-                    }}
-                }}";
-
-                using (var client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("fiware-service", "smart");
-                    client.DefaultRequestHeaders.Add("fiware-servicepath", "/");
-
-                    var content = new StringContent(payload, Encoding.UTF8, "application/json");
-                    var response = await client.PatchAsync(url, content);
-
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        throw new Exception($"Falha ao enviar comando: {response.StatusCode}");
-                    }
-                }
+                await _orionService.EnviarComandoAsync(model.DeviceId, model.Comando);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -97,65 +119,5 @@ namespace ProjetoSupervisao.Controllers
                 return BadRequest(new { erro = ex.Message });
             }
         }
-
-        private TimeZoneInfo GetBrazilTimeZone()
-        {
-            try
-            {
-                return TimeZoneInfo.FindSystemTimeZoneById("America/Sao_Paulo");
-            }
-            catch (TimeZoneNotFoundException)
-            {
-                return TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
-            }
-        }
-
-        private async Task<(double Valor, string Timestamp)> ChamarApiOrion(string deviceId, string atributo)
-        {
-            string url = $"{_orionUrl}/v2/entities/{deviceId}/attrs/{atributo}";
-
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Add("fiware-service", "smart");
-                client.DefaultRequestHeaders.Add("fiware-servicepath", "/");
-
-                var response = await client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    var obj = JObject.Parse(json);
-
-                    double valor = 0.0;
-                    DateTime utcTime = DateTime.UtcNow;
-
-                    if (obj["value"] != null && obj["value"].Type != JTokenType.Null)
-                    {
-                        string valorString = obj["value"].ToString().Replace(",", "."); // força ponto
-                        valor = double.Parse(valorString, CultureInfo.InvariantCulture);
-                    }
-
-                    if (obj["metadata"]?["TimeInstant"]?["value"] != null)
-                    {
-                        utcTime = obj["metadata"]["TimeInstant"]["value"].ToObject<DateTime>();
-                    }
-
-                    var fusoHorarioBrasil = GetBrazilTimeZone();
-                    DateTime brazilTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, fusoHorarioBrasil);
-                    string timestampFormatado = brazilTime.ToString("dd/MM/yyyy HH:mm:ss");
-
-                    return (valor, timestampFormatado);
-                }
-                else
-                {
-                    throw new Exception($"Erro ao consultar API ({atributo}): {response.StatusCode}");
-                }
-            }
-        }
-    }
-
-    public class ComandoRequest
-    {
-        public string DeviceId { get; set; }
-        public string Comando { get; set; }
     }
 }
