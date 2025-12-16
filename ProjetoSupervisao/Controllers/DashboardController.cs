@@ -9,6 +9,8 @@ namespace ProjetoSupervisao.Controllers
 {
     public class DashboardController : PadraoController<PadraoViewModel>
     {
+        private static readonly TimeZoneInfo BrasiliaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("America/Sao_Paulo");
+
         public DashboardController()
         {
             DAO = null;
@@ -92,7 +94,9 @@ namespace ProjetoSupervisao.Controllers
             {
                 foreach (var item in valoresTemp)
                 {
-                    viewModel.Labels.Add(Convert.ToDateTime(item["recvTime"]).ToString("HH:mm:ss"));
+                    DateTime dataUTC = Convert.ToDateTime(item["recvTime"]);
+                    DateTime dataBrasilia = TimeZoneInfo.ConvertTime(dataUTC, BrasiliaTimeZone);
+                    viewModel.Labels.Add(dataBrasilia.ToString("HH:mm:ss"));
                     viewModel.Temperaturas.Add(Convert.ToDouble(item["attrValue"]));
                 }
             }
