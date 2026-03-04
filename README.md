@@ -94,7 +94,6 @@ Aplicação Web → Orion → IoT Agent → MQTT → ESP32 → LED/Buzzer
 * **Locais:** Ambientes monitorados e seus limites
 * **Dispositivos:** ESP32 vinculados ao FIWARE
 * **Usuários:** Controle básico de acesso
-
 ---
 
 ## 🧰 Tecnologias Utilizadas
